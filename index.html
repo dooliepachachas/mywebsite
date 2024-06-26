@@ -20,9 +20,10 @@
         nav ul {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
         nav ul li {
-            display: inline;
+            display: inline-block;
             margin: 0 1rem;
         }
         nav ul li a {
@@ -39,21 +40,36 @@
         }
         .portfolio .projects {
             display: flex;
-            justify-content: space-around;
             flex-wrap: wrap;
+            justify-content: center;
         }
         .portfolio .projects .project {
             background-color: white;
             border: 1px solid #ddd;
             margin: 1rem;
             padding: 1rem;
-            width: 30%;
+            width: calc(33.333% - 2rem);
+            box-sizing: border-box;
         }
         footer {
             background-color: #333;
             color: white;
             text-align: center;
             padding: 1rem 0;
+        }
+        @media (max-width: 768px) {
+            nav ul li {
+                display: block;
+                margin: 0.5rem 0;
+            }
+            .portfolio .projects .project {
+                width: calc(50% - 2rem);
+            }
+        }
+        @media (max-width: 480px) {
+            .portfolio .projects .project {
+                width: calc(100% - 2rem);
+            }
         }
     </style>
 </head>
